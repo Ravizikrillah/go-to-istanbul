@@ -9,7 +9,7 @@ const https = require('https');
 
 // ─── Version ──────────────────────────────────────────────────────────────────
 
-const VERSION = '1.0.1';
+const VERSION = '1.0.2';
 const REPO_RAW = 'https://raw.githubusercontent.com/Ravizikrillah/go-to-istanbul/main';
 
 // ─── Argument Parsing ─────────────────────────────────────────────────────────
@@ -184,46 +184,6 @@ try {
   process.exit(1);
 }
 
-// ─── Auto-run Go Tests ────────────────────────────────────────────────────────
-
-if (shouldRun) {
-  const { spawnSync } = require('child_process');
-  const pkg = testPkg;
-  const coverpkgFlag = coverpkg ? `-coverpkg=${coverpkg}` : `-coverpkg=${pkg}`;
-  const cmd = `go test ${coverpkgFlag} -coverprofile=${coverageFile} ${pkg}`;
-
-  // ── Braille spinner (same as mosaic show_spinner) ──────────────────────────
-  const frames = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
-  const CYAN  = '\x1b[1;36m';
-  const RESET = '\x1b[0m';
-  let frameIdx = 0;
-
-  // Hide cursor
-  process.stdout.write('\x1b[?25l');
-
-  const spinner = setInterval(() => {
-    const frame = frames[frameIdx++ % frames.length];
-    process.stdout.write(`\r${CYAN}${frame}${RESET}  Running Backend Unit Tests...`);
-  }, 80);
-
-  // Run go test, capturing output — show only on failure
-  const result = spawnSync('sh', ['-c', cmd], { encoding: 'utf8' });
-
-  // Stop spinner, clear line, restore cursor
-  clearInterval(spinner);
-  process.stdout.write('\r\x1b[K');
-  process.stdout.write('\x1b[?25h');
-
-  if (result.status !== 0) {
-    console.error('❌  go test failed:\n');
-    if (result.stdout) process.stderr.write(result.stdout);
-    if (result.stderr) process.stderr.write(result.stderr);
-    console.error('\nFix test errors and try again.\n');
-    process.exit(1);
-  }
-
-  console.log('✅  Tests passed\n');
-}
 
 
 // ─── Spinner Helper (shell-based, writes to /dev/tty to bypass buffering) ─────
