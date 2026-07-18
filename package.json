@@ -1,0 +1,48 @@
+{
+  "name": "@ravizikrillah/go-to-istanbul",
+  "version": "1.0.0",
+  "description": "Convert Go test coverage output (coverage.out) to a beautiful Istanbul HTML report",
+  "main": "index.js",
+  "bin": {
+    "go-to-istanbul": "./index.js"
+  },
+  "scripts": {
+    "test": "node test/index.test.js"
+  },
+  "keywords": [
+    "go",
+    "golang",
+    "coverage",
+    "istanbul",
+    "html",
+    "report",
+    "test",
+    "coverpkg"
+  ],
+  "author": "Ravi Bangkit Nur Zikrillah",
+  "license": "MIT",
+  "peerDependencies": {
+    "istanbul-lib-coverage": "^3.0.0",
+    "istanbul-lib-report": "^3.0.0",
+    "istanbul-reports": "^3.0.0"
+  },
+  "devDependencies": {
+    "istanbul-lib-coverage": "^3.2.2",
+    "istanbul-lib-report": "^3.0.1",
+    "istanbul-reports": "^3.1.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ravizikrillah/go-to-istanbul.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ravizikrillah/go-to-istanbul/issues"
+  },
+  "homepage": "https://github.com/ravizikrillah/go-to-istanbul#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}
