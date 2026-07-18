@@ -9,7 +9,7 @@ const https = require('https');
 
 // ─── Version ──────────────────────────────────────────────────────────────────
 
-const VERSION = '1.0.0';
+const VERSION = '1.0.1';
 const REPO_RAW = 'https://raw.githubusercontent.com/Ravizikrillah/go-to-istanbul/main';
 
 // ─── Argument Parsing ─────────────────────────────────────────────────────────

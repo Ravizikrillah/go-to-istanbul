@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](https://nodejs.org)
 [![Shell](https://img.shields.io/badge/install-one--liner-blue)](#installation)
-[![Version](https://img.shields.io/badge/version-1.0.0-orange)](#)
+[![Version](https://img.shields.io/badge/version-1.0.1-orange)](#)
 
 > Convert Go test coverage output (`coverage.out`) into a beautiful, interactive **Istanbul HTML report** — the same visual coverage experience JavaScript developers love, now for Go projects.
 
@@ -11,8 +11,8 @@
 
 ## Preview
 
-![Coverage Report Preview](docs/preview.png)
-![Coverage Report Preview](docs/preview2.png)
+![Coverage Report Preview](https://raw.githubusercontent.com/Ravizikrillah/go-to-istanbul/main/docs/preview.png)
+![Coverage Report Preview](https://raw.githubusercontent.com/Ravizikrillah/go-to-istanbul/main/docs/preview2.png)
 
 ---
 
@@ -153,7 +153,7 @@ go-to-istanbul -rep html,text-summary,lcov
 ## Options
 
 ```
-go-to-istanbul v1.0.0
+go-to-istanbul v1.0.1
 
 Options:
   --input,      -i  Path to Go coverage file          (default: coverage.out)

@@ -1,6 +1,6 @@
 {
   "name": "@ravizikrillah/go-to-istanbul",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert Go test coverage output (coverage.out) to a beautiful Istanbul HTML report",
   "main": "index.js",
   "bin": {
