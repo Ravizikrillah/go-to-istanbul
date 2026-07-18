@@ -1,0 +1,5 @@
+node_modules/
+coverage-report/
+.nyc_output/
+coverage.out
+*.out
